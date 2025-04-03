@@ -66,3 +66,24 @@ form {
     width: 100%;
 }
 
+label {
+    margin: 1.5rem 0 0.4rem 0;
+}
+
+input, textarea {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(223, 223, 223);
+    font-size: 1.3rem;
+    padding: 0.5rem 0.5rem;
+    color:rgb(84, 84, 84);
+    font-weight: 400;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(120, 120, 120);
+}
