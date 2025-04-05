@@ -11,6 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
     height: 120vh;
     overflow: hidden;
 }
@@ -20,6 +21,7 @@ body{
     background-color: black;
     border-top-right-radius: 20px;
     padding: 5rem 7rem 30rem 3rem;
+    margin-right: 3rem;
 }
 
 .add-projects button {
@@ -32,13 +34,63 @@ body{
     border-radius: 5px
 }
 
+.no-project-selected{
+    margin-bottom: 13rem;
+    margin-left: 20%;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(226, 226, 226);
+    
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 5rem;
+}
+
+.no-project-selected h3 {
+    font-size: 1.5rem;
+    color: rgb(102, 101, 101);
+    margin-bottom: 0.3rem;
+}
+
+.no-project-selected p {
+    font-size: 1.2rem;
+    color:rgb(148, 147, 147)
+}
+
+.no-project-selected button {
+    background-color: rgb(68, 68, 68);
+    color: rgb(167, 167, 167);
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.no-project-selected button:hover {
+    color: black;
+    background-color: transparent;
+    border: 1px solid rgb(68, 68, 68);
+    cursor: pointer;
+    box-shadow: 5px 10px 15px rgb(239, 226, 168);
+
+}
+
 .projects-form {
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     flex-direction: row-reverse;
     width: 40%;
-    margin: 0 0 12rem 3rem;
+    margin: 0 0 12rem 0;
 }
 
 
@@ -87,3 +139,61 @@ select:focus {
     outline: none;
     border-bottom: 2px solid rgb(120, 120, 120);
 }
+
+/* Project info */
+.project{
+    margin-bottom: 10rem;
+    width: 40%;
+}
+
+.title-and-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-and-button button {
+    border: none;
+    padding: 1.1rem 1.3rem;
+    font-size: 1.1rem;
+    color:rgb(79, 79, 79);
+    font-weight: 550;
+    background-color: transparent;
+}
+.project p:nth-child(2){
+    color:rgb(120, 120, 120)
+}
+
+.project p:nth-child(3){
+    font-size: 1.2rem;
+}
+
+.project h2{
+    font-size: 2rem;
+}
+.tasks input{
+    margin-right: 2rem;
+}
+
+.tasks button {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 1.1rem 1.3rem;
+}
+.tasks button:hover,
+.title-and-button button:hover {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgb(239, 226, 168);
+}
+
+.project ol{
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+.project ol li {
+    font-size: 1.2rem;
+    text-align: start;
+}
+

@@ -1,4 +1,7 @@
-import './index.css'
+import './index.css';
+import picture from './assets/no-projects.png';
+
+import AddProjects from './assets/components/AddProject.jsx';
 
 function App() {
   return (
@@ -7,21 +10,13 @@ function App() {
         <div className="add-projects">
           <h2>YOUR PROJECTS</h2>
           <button>+ Add Project</button>
-        </div>
-        <div className="projects-form">
-          <div className='cancel-save'>
-            <button>Cancel</button>
-            <button>Save</button>
+          <div className='saved-projects'>
+            <ol className='ol-saved-projects'>
+
+            </ol>
           </div>
-          <form>
-            <label>TITLE</label>
-            <input type='text'></input>
-            <label>DESCRIPTION</label>
-            <textarea></textarea>
-            <label>DUE DATE</label>
-            <input type='date'></input>
-          </form>
         </div>
+
       </div>
     </>
   );
