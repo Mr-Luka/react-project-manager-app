@@ -34,6 +34,11 @@ body{
     border-radius: 5px
 }
 
+.add-projects button:hover{
+    cursor: pointer;
+    background-color: rgb(51, 51, 51);
+}
+
 .no-project-selected{
     margin-bottom: 13rem;
     margin-left: 20%;
