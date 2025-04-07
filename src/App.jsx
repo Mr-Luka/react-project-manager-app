@@ -1,9 +1,18 @@
 import './index.css';
-import picture from './assets/no-projects.png';
 
+
+import {useState} from 'react';
+
+import NoProjectSelected from './assets/components/NoProjectSelected.jsx';
 import AddProjects from './assets/components/AddProject.jsx';
 
 function App() {
+  const [newProject, setNewProject] = useState(false);
+
+  function handleClick(){
+    setNewProject(newProject => !newProject);
+  }
+
   return (
     <>
       <div className="projects-wrapper">
@@ -14,12 +23,7 @@ function App() {
             <ol className='ol-saved-projects'></ol>
           </div>
         </div>
-          <div className='no-project-selected'>
-            <img src={picture} alt="No projects selected" />
-            <h3>No Project Selected</h3>
-            <p>Select a project or get started with a new one</p>
-            <button>Create new project</button>
-          </div>
+        {newProject ? <AddProjects /> : <NoProjectSelected createProject={handleClick}/>}
       </div>
     </>
   );
