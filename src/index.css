@@ -1,5 +1,6 @@
 body{ 
-    overflow: hidden
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
 }
 
 .projects-wrapper {
@@ -20,23 +21,54 @@ body{
     color: rgb(226, 226, 226);
     background-color: black;
     border-top-right-radius: 20px;
-    padding: 5rem 7rem 30rem 3rem;
+    padding: 5rem 7rem 15rem 3rem;
     margin-right: 3rem;
+    height: 50vh;
 }
 
 .add-projects button {
     margin-top: 2rem;
-    background-color: rgb(68, 68, 68);
-    color: rgb(167, 167, 167);
+    background-color: rgb(33, 33, 33);
+    color: rgb(152, 152, 152);
     border: none;
     font-size: 1.1rem;
     padding: 0.9rem 1rem;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
 .add-projects button:hover{
     cursor: pointer;
     background-color: rgb(51, 51, 51);
+}
+
+.saved-projects{
+    font-size: 1.1rem;
+    margin-top: 3rem;
+    margin-bottom: 0; 
+    width: 120%; 
+    max-height: 30vh; 
+}
+
+.ol-saved-projects {
+    margin: 0 0 0 0;
+    padding-left: 0;
+    width: 100%;
+
+}
+
+.ol-saved-projects li {
+    text-align: left;
+    list-style: none;
+    padding: 0.5rem;
+    color: rgb(168, 168, 168);
+    width: 110%;
+    
+}
+
+.ol-saved-projects li:hover {
+    background-color: rgba(68, 68, 68, 0.201);
+    border-radius: 5px;
+    color: white;
 }
 
 .no-project-selected{
@@ -158,6 +190,8 @@ select:focus {
     outline: none;
     border-bottom: 2px solid rgb(120, 120, 120);
 }
+
+
 
 /* Project info */
 .project{

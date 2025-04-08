@@ -6,7 +6,7 @@ export default function AddProject({cancel, submitForm, handleInput}){
         <div className="projects-form">
           <form onSubmit={submitForm}>
           <div className='cancel-save' >
-            <button onClick={cancel}>Cancel</button>
+            <button type='button' onClick={cancel}>Cancel</button>
             <button type='submit'>Save</button>
           </div>
             <label>TITLE</label>

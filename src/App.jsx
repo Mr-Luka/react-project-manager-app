@@ -5,9 +5,11 @@ import {useState} from 'react';
 
 import NoProjectSelected from './assets/components/NoProjectSelected.jsx';
 import AddProjects from './assets/components/AddProject.jsx';
+import Project from './assets/components/Project.jsx';
 
 function App() {
   const [newProject, setNewProject] = useState(false);
+  const [projects, setProjects] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -25,7 +27,19 @@ function App() {
     
     function handleSubmit(e){
       e.preventDefault();
-      console.log(formData);
+      setNewProject(false);
+      setProjects(prevProject=> {
+        const projectData = 
+        [
+          ...prevProject,
+        {
+          title: formData.title,
+          description: formData.description,
+          dueDate: formData.dueDate,
+        }]
+        return projectData;
+      })
+      console.log(projects);
     }
 
   function handleClick(){
@@ -40,6 +54,8 @@ function App() {
           <button onClick={handleClick}>+ Add Project</button>
           <div className='saved-projects'>
             <ol className='ol-saved-projects'>
+              {projects.map((project, projectIndex)=> 
+              <li key={projectIndex}>{project.title}</li>)}
             </ol>
           </div>
         </div>
