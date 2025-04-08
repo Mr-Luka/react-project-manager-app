@@ -99,6 +99,10 @@ img {
 }
 
 
+.cancel-save{
+    display: flex;
+    justify-content: flex-end;
+}
 
 .cancel-save button{
     border: none;
