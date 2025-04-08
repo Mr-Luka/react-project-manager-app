@@ -8,6 +8,25 @@ import AddProjects from './assets/components/AddProject.jsx';
 
 function App() {
   const [newProject, setNewProject] = useState(false);
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    dueDate: '',
+  });
+
+  function handleInput(e){
+    const {name, value} = e.target;
+    setFormData(prevForm => {
+      return {
+        ...prevForm, 
+        [name]: value}
+      },
+    )}
+    
+    function handleSubmit(e){
+      e.preventDefault();
+      console.log(formData);
+    }
 
   function handleClick(){
     setNewProject(newProject => !newProject);
@@ -24,7 +43,17 @@ function App() {
             </ol>
           </div>
         </div>
-        {newProject ? <AddProjects cancel={handleClick}/> : <NoProjectSelected createProject={handleClick}/>}
+        {newProject ? 
+          <AddProjects 
+            submitForm={handleSubmit}
+            handleInput={handleInput}
+            cancel={handleClick}
+          /> 
+        : 
+          <NoProjectSelected 
+            createProject={handleClick}
+          />
+        }
       </div>
     </>
   );

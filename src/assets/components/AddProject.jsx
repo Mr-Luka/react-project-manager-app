@@ -1,32 +1,10 @@
-import {useState} from 'react';
 
-export default function AddProject({cancel}){
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    dueDate: '',
-  });
-
+export default function AddProject({cancel, submitForm, handleInput}){
   
-  function handleInput(e){
-    const {name, value} = e.target;
-    setFormData(prevForm => {
-      return {
-        ...prevForm, 
-        [name]: value}
-      },
-    )}
-    
-    function handleSubmit(e){
-      e.preventDefault();
-      console.log(formData);
-    }
-
-
     return (
         <>
         <div className="projects-form">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={submitForm}>
           <div className='cancel-save' >
             <button onClick={cancel}>Cancel</button>
             <button type='submit'>Save</button>
