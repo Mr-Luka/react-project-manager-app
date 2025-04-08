@@ -1,10 +1,11 @@
-export default function AddProject(){
+import {useState} from 'react';
+export default function AddProject({cancel}){
 
     return (
         <>
         <div className="projects-form">
           <div className='cancel-save'>
-            <button>Cancel</button>
+            <button onClick={cancel}>Cancel</button>
             <button>Save</button>
           </div>
           <form>

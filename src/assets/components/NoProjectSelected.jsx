@@ -1,12 +1,7 @@
 import {useState} from 'react';
 import picture from '../no-projects.png';
 
-import AddProject from './AddProject.jsx';
-
 export default function NoProjectSelected({createProject}){
-
-
-
 
     return (
         <div className='no-project-selected'>
