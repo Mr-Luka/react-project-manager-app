@@ -11,6 +11,7 @@ function App() {
   const [newProject, setNewProject] = useState(false);
   const [seeProject, setSeeProject] = useState(false);
   const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -47,9 +48,11 @@ function App() {
     setNewProject(newProject => !newProject);
   }
 
-  function openProject(){
+  function openProject(projectKey){
     setNewProject(false);
     setSeeProject(true);
+    const projectObject = projects[projectKey]
+    setSelectedProject(projectObject)
   }
 
   return (
@@ -61,7 +64,7 @@ function App() {
           <div className='saved-projects'>
             <ol className='ol-saved-projects'>
               {projects.map((project, projectIndex)=> 
-              <li key={projectIndex} onClick={openProject}>{project.title}</li>)}
+              <li key={projectIndex} onClick={()=>openProject(projectIndex)}>{project.title}</li>)}
             </ol>
           </div>
         </div>
@@ -73,9 +76,9 @@ function App() {
           />
           ) : seeProject ? (
             <Project
-              title={formData.title}
-              description={formData.description}
-              date={formData.dueDate}
+              title={selectedProject.title}
+              description={selectedProject.description}
+              date={selectedProject.dueDate}
             />
           ) : (
           <NoProjectSelected 

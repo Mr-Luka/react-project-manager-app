@@ -1,4 +1,4 @@
-function convertDate(isoDate) {
+export function convertDate(isoDate) {
   try {
     const date = new Date(isoDate);
     if (isNaN(date)) {
