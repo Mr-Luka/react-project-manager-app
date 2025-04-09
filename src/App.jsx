@@ -72,7 +72,11 @@ function App() {
             cancel={handleClick}
           />
           ) : seeProject ? (
-            <Project />
+            <Project
+              title={formData.title}
+              description={formData.description}
+              date={formData.dueDate}
+            />
           ) : (
           <NoProjectSelected 
             createProject={handleClick}

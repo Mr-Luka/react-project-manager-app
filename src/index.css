@@ -206,7 +206,7 @@ select:focus {
 
 .title-and-button button {
     border: none;
-    padding: 1.1rem 1.3rem;
+    padding: 0rem 1rem;
     font-size: 1.1rem;
     color:rgb(79, 79, 79);
     font-weight: 550;
@@ -217,7 +217,7 @@ select:focus {
 }
 
 .project p:nth-child(3){
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .project h2{
@@ -231,7 +231,7 @@ select:focus {
     border: none;
     background-color: transparent;
     font-size: 1rem;
-    padding: 1.1rem 1.3rem;
+    padding: 1rem 1.3rem;
 }
 .tasks button:hover,
 .title-and-button button:hover {
