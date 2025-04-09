@@ -2,6 +2,7 @@ import './index.css';
 
 
 import {useState} from 'react';
+import { v4 as uuidv4 } from 'uuid'; //Importing a UUID generator
 
 import NoProjectSelected from './assets/components/NoProjectSelected.jsx';
 import AddProjects from './assets/components/AddProject.jsx';
@@ -31,15 +32,16 @@ function App() {
       e.preventDefault();
       setNewProject(false);
       setProjects(prevProject=> {
-        const projectData = 
+        const newProject = 
         [
           ...prevProject,
         {
+          id: uuidv4(), // generate unique ID
           title: formData.title,
           description: formData.description,
           dueDate: formData.dueDate,
         }]
-        return projectData;
+        return newProject;
       })
       console.log(projects);
     }
@@ -53,6 +55,13 @@ function App() {
     setSeeProject(true);
     const projectObject = projects[projectKey]
     setSelectedProject(projectObject)
+  }
+
+  function deleteProject(){
+    const newTasksArray = projects.filter(project => project.id !== selectedProject.id);
+    setProjects(newTasksArray);
+    setSeeProject(false);
+    setSeeProject(null);
   }
 
   return (
@@ -79,6 +88,7 @@ function App() {
               title={selectedProject.title}
               description={selectedProject.description}
               date={selectedProject.dueDate}
+              remove={deleteProject}
             />
           ) : (
           <NoProjectSelected 

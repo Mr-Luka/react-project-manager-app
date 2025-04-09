@@ -1,6 +1,8 @@
+
 import { convertDate } from '../utils/convertDate.js';
 
-export default function Project({title, date, description}){
+export default function Project({title, date, description, remove}){
+
   const formattedDate = convertDate(date);
 
 
@@ -8,7 +10,7 @@ export default function Project({title, date, description}){
         <div className='project'>
           <div className='title-and-button'>
             <h1>{title}</h1>
-            <button>Delete</button>
+            <button onClick={remove}>Delete</button>
           </div>
           <p>{formattedDate}</p>
           <p>{description}</p>
