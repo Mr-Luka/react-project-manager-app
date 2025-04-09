@@ -12,7 +12,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     height: 120vh;
     overflow: hidden;
 }
@@ -194,7 +193,11 @@ select:focus {
 
 
 /* Project info */
+
+
+
 .project{
+    height: 50vh;
     margin-bottom: 10rem;
     width: 40%;
 }
@@ -227,6 +230,8 @@ select:focus {
 .project h2{
     font-size: 2rem;
 }
+
+
 .tasks input{
     margin-right: 0rem;
     width: 50%;
@@ -249,10 +254,64 @@ select:focus {
 .project ol{
     list-style: none;
     margin-left: 0;
-    padding: 0;
+    padding: 1rem 1rem;
 }
 .project ol li {
     font-size: 1.2rem;
     text-align: start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.tasks-ol {
+    border-radius: 5px;
+    margin-top: 2rem;
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.active-tasks {
+    background-color: rgba(68, 68, 68, 0.082);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f0f0f000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  border: 1px solid rgb(190, 189, 189);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(127, 201, 205);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+.tasks-ol li button {
+    border: none;
+    font-size: 1.1rem;
+}
+
+.tasks-ol li button:hover {
+    background-color: rgba(117, 117, 117, 0.325);
+    border-radius: 5px;
+    color: white;
+}
+
+.tasks-ol li p {
+    margin: 0;
+    padding: 0.5rem;
 }
 
