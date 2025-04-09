@@ -9,6 +9,7 @@ import Project from './assets/components/Project.jsx';
 
 function App() {
   const [newProject, setNewProject] = useState(false);
+  const [seeProject, setSeeProject] = useState(false);
   const [projects, setProjects] = useState([]);
   const [formData, setFormData] = useState({
     title: '',
@@ -46,6 +47,11 @@ function App() {
     setNewProject(newProject => !newProject);
   }
 
+  function openProject(){
+    setNewProject(false);
+    setSeeProject(true);
+  }
+
   return (
     <>
       <div className="projects-wrapper">
@@ -55,21 +61,24 @@ function App() {
           <div className='saved-projects'>
             <ol className='ol-saved-projects'>
               {projects.map((project, projectIndex)=> 
-              <li key={projectIndex}>{project.title}</li>)}
+              <li key={projectIndex} onClick={openProject}>{project.title}</li>)}
             </ol>
           </div>
         </div>
         {newProject ? 
-          <AddProjects 
+          (<AddProjects 
             submitForm={handleSubmit}
             handleInput={handleInput}
             cancel={handleClick}
-          /> 
-        : 
+          />
+          ) : seeProject ? (
+            <Project />
+          ) : (
           <NoProjectSelected 
             createProject={handleClick}
           />
-        }
+        )}
+
       </div>
     </>
   );
