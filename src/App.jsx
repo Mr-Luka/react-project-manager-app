@@ -9,11 +9,11 @@ import AddProjects from './assets/components/AddProject.jsx';
 import Project from './assets/components/Project.jsx';
 
 function App() {
-  const [newProject, setNewProject] = useState(false);
-  const [seeProject, setSeeProject] = useState(false);
-  const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState([]);
-  const [formData, setFormData] = useState({
+  const [newProject, setNewProject] = useState(false); // state that checks if there are any new projects
+  const [seeProject, setSeeProject] = useState(false); // state that will check to see if we are looking at the project info when we click on it
+  const [projects, setProjects] = useState([]); // state that will store all the projects
+  const [selectedProject, setSelectedProject] = useState([]); // state that will show me the selected project
+  const [formData, setFormData] = useState({ // state that will store project data
     title: '',
     description: '',
     dueDate: '',
