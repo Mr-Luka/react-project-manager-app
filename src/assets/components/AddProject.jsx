@@ -1,4 +1,5 @@
-
+// Component function that will gather users input, name of the project, descriptipon
+// and due date.
 export default function AddProject({cancel, submitForm, handleInput}){
   
     return (

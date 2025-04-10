@@ -4,7 +4,6 @@ import { convertDate } from '../utils/convertDate.js';
 export default function Project({title, date, description, remove}){
   const [newTask, setNewTask] = useState('');
   const [newTasks, setNewTasks] = useState([]);
-  const [deletingTask, setDeletingTask] = useState([]);
 
   const formattedDate = convertDate(date);
 
@@ -21,8 +20,7 @@ export default function Project({title, date, description, remove}){
 }
 
 function clearTask(taskIndex){
-  const taskObject = newTasks[taskIndex];
-  const filteredTasks = newTasks.filter(project => project !== taskObject)
+  const filteredTasks = newTasks.filter((_, index) => index !== taskIndex)
   setNewTasks(filteredTasks);
 }
 
