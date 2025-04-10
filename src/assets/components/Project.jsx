@@ -1,3 +1,8 @@
+/* Component that imports js to convert dates,
+displays users already entered project title, description and due date,
+it also allows for user to enter tasks and adds them to the list of that project.
+*/
+
 import {useState} from 'react';
 import { convertDate } from '../utils/convertDate.js';
 
@@ -7,10 +12,13 @@ export default function Project({title, date, description, remove}){
 
   const formattedDate = convertDate(date);
 
+  // function that captures input entires
   function handleInput(e){
     setNewTask(e.target.value);
   }
 
+  // function that handles submit task and sets the state of newTasks to previous tasks and 
+  // the new task entered by the user
   function handleSubmit(e){
   e.preventDefault();
   if(newTask.trim() !== ''){
@@ -19,6 +27,7 @@ export default function Project({title, date, description, remove}){
   }
 }
 
+// function that allows a button to clear the task
 function clearTask(taskIndex){
   const filteredTasks = newTasks.filter((_, index) => index !== taskIndex)
   setNewTasks(filteredTasks);
