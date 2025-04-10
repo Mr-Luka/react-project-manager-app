@@ -1,4 +1,5 @@
-import {useState} from 'react';
+// Component that will be generated when there are no projects selected, or when user
+// makes a project, save it, and it will default to this page
 import picture from '../no-projects.png';
 
 export default function NoProjectSelected({createProject}){
