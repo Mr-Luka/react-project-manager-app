@@ -19,6 +19,7 @@ function App() {
     dueDate: '',
   });
 
+  // function that will handle the input form whwn user is creating a project
   function handleInput(e){
     const {name, value} = e.target;
     setFormData(prevForm => {
@@ -27,7 +28,8 @@ function App() {
         [name]: value}
       },
     )}
-    
+    // function that will prevent page from refreshing when submitting the form and
+    // update the projects state with previous + new project in the array
     function handleSubmit(e){
       e.preventDefault();
       setNewProject(false);
@@ -46,10 +48,14 @@ function App() {
       console.log(projects);
     }
 
+    // function that will handle the delete button
   function handleClick(){
     setNewProject(newProject => !newProject);
   }
 
+
+  // function that will handle the project info button,
+  // project that i clicked on from the created list
   function openProject(projectKey){
     setNewProject(false);
     setSeeProject(true);
@@ -57,6 +63,8 @@ function App() {
     setSelectedProject(projectObject)
   }
 
+  // function that will filter through projects and return array of all the projects except
+  // the one that i clicked on to delete.
   function deleteProject(){
     const newTasksArray = projects.filter(project => project.id !== selectedProject.id);
     setProjects(newTasksArray);
@@ -72,12 +80,13 @@ function App() {
           <button onClick={handleClick}>+ Add Project</button>
           <div className='saved-projects'>
             <ol className='ol-saved-projects'>
-              {projects.map((project, projectIndex)=> 
+              {projects.map((project, projectIndex)=> //mapping through projects and creating a list item for each one
               <li key={projectIndex} onClick={()=>openProject(projectIndex)}>{project.title}</li>)}
             </ol>
           </div>
         </div>
-        {newProject ? 
+        {newProject ?  // conditionally checking if there is a new project to open the addProjects component
+// if i click on the project it will open <Project, and if none of those, it will render <NoProjectsSelected component
           (<AddProjects 
             submitForm={handleSubmit}
             handleInput={handleInput}
